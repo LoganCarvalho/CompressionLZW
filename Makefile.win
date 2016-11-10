@@ -1,0 +1,45 @@
+# Project: CompressorLZW
+# Makefile created by Dev-C++ 5.4.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = CompressorLZW_private.res
+OBJ      = main.o menu.o lzw.o compacta.o descompacta.o $(RES)
+LINKOBJ  = main.o menu.o lzw.o compacta.o descompacta.o $(RES)
+LIBS     = -L"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -L"C:/Dev-Cpp/lib" -static-libgcc -lm -lalleg -mwindows -m32
+INCS     = -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/include"
+CXXINCS  = -I"C:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Dev-Cpp/include"
+BIN      = CompressorLZW.exe
+CXXFLAGS = $(CXXINCS) -m32
+CFLAGS   = $(INCS) -m32
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+lzw.o: lzw.c
+	$(CC) -c lzw.c -o lzw.o $(CFLAGS)
+
+compacta.o: compacta.c
+	$(CC) -c compacta.c -o compacta.o $(CFLAGS)
+
+descompacta.o: descompacta.c
+	$(CC) -c descompacta.c -o descompacta.o $(CFLAGS)
+
+CompressorLZW_private.res: CompressorLZW_private.rc 
+	$(WINDRES) -i CompressorLZW_private.rc -F pe-i386 --input-format=rc -o CompressorLZW_private.res -O coff 

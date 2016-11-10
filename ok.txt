@@ -1,0 +1,9 @@
+
+Existem 3 vetores, code_value[i] , prefix_code[i] e append_character[i]
+
+Quando queremos adicionar um novo código na tabela, usamos a função de hashing "find_match"
+para gerar o valor correto de I. Find_match gera um endereço e checa se está alocado ou não, 
+caso esteja, sorteia novamente.
+
+prefix_code e append_char são combinados para formar um array de endereços, se os endereços
+corresponderem, find_match retorna.
