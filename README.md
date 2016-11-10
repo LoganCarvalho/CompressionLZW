@@ -24,3 +24,8 @@ O programa a ser implementado deverá:
 O compactador deverá ser testado em arquivos de diferentes tipos e tamanhos afim de
 analisar o fator de compressão, represente os resultados graficamente e faça uma
 breve análise dos resultados obtidos.
+
+
+A instalação foi feita usando versões especificas do Dev C e do Allegro que podem ser encontradas no link abaixo:
+
+https://drive.google.com/drive/folders/0B5fcBvtHimFRVG02OTJ1WUNidXM?usp=sharing
